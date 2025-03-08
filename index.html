@@ -57,13 +57,146 @@
         .game-container {
             aspect-ratio: 16/9;
             max-height: 80vh;
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
         }
         
         @media (max-width: 768px) {
             .game-container {
-                aspect-ratio: 4/3;
-                height: 70vh;
+                aspect-ratio: 16/9;
+                height: auto;
+                max-height: 70vh;
+                width: 100%;
+                margin: 0 auto;
+                border-radius: 8px;
             }
+            
+            #game {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+            
+            #game h2 {
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .game-container {
+                max-height: 60vh;
+                border-radius: 6px;
+            }
+        }
+
+        /* 全屏模式样式 */
+        .fullscreen-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s, opacity 0.3s;
+            opacity: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .fullscreen-btn {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+                bottom: 8px;
+                right: 8px;
+            }
+            
+            .fullscreen-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        .fullscreen-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .game-container:hover .fullscreen-btn {
+            opacity: 1;
+        }
+
+        /* 全屏时的样式 */
+        .game-container.fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            max-height: none;
+            z-index: 9999;
+            aspect-ratio: auto;
+            background-color: #000;
+            border-radius: 0;
+        }
+
+        .game-container.fullscreen iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .exit-fullscreen-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .exit-fullscreen-btn {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+                top: 10px;
+                right: 10px;
+            }
+            
+            .exit-fullscreen-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        .exit-fullscreen-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .game-container.fullscreen .exit-fullscreen-btn {
+            display: flex;
+        }
+
+        .game-container.fullscreen .fullscreen-btn {
+            display: none;
         }
     </style>
 </head>
@@ -111,17 +244,28 @@
     <section id="game" class="py-10 md:py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-apple-blue">Play Tower Defense Online</h2>
-            <div class="game-container mx-auto bg-black rounded-lg shadow-xl overflow-hidden">
+            <div id="game-container" class="game-container mx-auto bg-black rounded-lg shadow-xl overflow-hidden">
                 <iframe 
+                    id="game-iframe"
                     src="https://www.onlinegames.io/games/2023/unity/hero-rush-tower-defense/index.html" 
                     class="w-full h-full border-0"
                     allowfullscreen
                     loading="lazy"
                     title="Tower Defense Online Game"
+                    allow="fullscreen"
                 ></iframe>
-            </div>
-            <div class="text-center mt-6">
-                <p class="text-apple-gray italic">Game not loading? <a href="https://www.onlinegames.io/games/2023/unity/hero-rush-tower-defense/index.html" target="_blank" class="text-apple-blue underline">Open in new tab</a></p>
+                <button id="fullscreen-btn" class="fullscreen-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
+                    </svg>
+                    Fullscreen
+                </button>
+                <button id="exit-fullscreen-btn" class="exit-fullscreen-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    Exit Fullscreen
+                </button>
             </div>
         </div>
     </section>
@@ -261,18 +405,122 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- JavaScript for Mobile Menu Toggle and Fullscreen -->
     <script>
+        // 移动端菜单切换
         document.getElementById('menu-toggle').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking on a link
+        // 点击链接关闭移动端菜单
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('mobile-menu').classList.add('hidden');
             });
+        });
+
+        // 全屏功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameContainer = document.getElementById('game-container');
+            const gameIframe = document.getElementById('game-iframe');
+            const fullscreenBtn = document.getElementById('fullscreen-btn');
+            const exitFullscreenBtn = document.getElementById('exit-fullscreen-btn');
+            
+            // 触摸设备检测
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            
+            // 如果是触摸设备，显示全屏按钮
+            if (isTouchDevice) {
+                fullscreenBtn.style.opacity = '1';
+            }
+            
+            // 移动端检测
+            const isMobile = window.innerWidth <= 768;
+            
+            // 调整移动端游戏容器高度
+            function adjustMobileGameHeight() {
+                if (isMobile) {
+                    const viewportWidth = window.innerWidth - 16; // 减去padding
+                    const height = (viewportWidth * 9) / 16; // 16:9比例
+                    gameContainer.style.height = height + 'px';
+                }
+            }
+            
+            // 页面加载和窗口大小改变时调整高度
+            window.addEventListener('resize', adjustMobileGameHeight);
+            adjustMobileGameHeight();
+            
+            // 进入全屏模式
+            fullscreenBtn.addEventListener('click', function() {
+                // 添加全屏类
+                gameContainer.classList.add('fullscreen');
+                
+                // 禁止页面滚动
+                document.body.style.overflow = 'hidden';
+                
+                // 滚动到游戏容器位置
+                gameContainer.scrollIntoView();
+                
+                // 尝试使用原生全屏API (对iframe内容)
+                try {
+                    if (gameIframe.requestFullscreen) {
+                        gameIframe.requestFullscreen();
+                    } else if (gameIframe.webkitRequestFullscreen) { /* Safari */
+                        gameIframe.webkitRequestFullscreen();
+                    } else if (gameIframe.msRequestFullscreen) { /* IE11 */
+                        gameIframe.msRequestFullscreen();
+                    }
+                } catch (e) {
+                    console.log('Native fullscreen not supported, using CSS fullscreen');
+                }
+            });
+
+            // 退出全屏模式
+            exitFullscreenBtn.addEventListener('click', function() {
+                // 移除全屏类
+                gameContainer.classList.remove('fullscreen');
+                
+                // 允许页面滚动
+                document.body.style.overflow = 'auto';
+                
+                // 尝试退出原生全屏
+                try {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { /* Safari */
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) { /* IE11 */
+                        document.msExitFullscreen();
+                    }
+                } catch (e) {
+                    console.log('Native fullscreen exit not supported');
+                }
+            });
+
+            // 监听ESC键退出全屏
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && gameContainer.classList.contains('fullscreen')) {
+                    exitFullscreenBtn.click();
+                }
+            });
+            
+            // 监听原生全屏变化
+            document.addEventListener('fullscreenchange', handleFullscreenChange);
+            document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+            document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+            document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+            
+            function handleFullscreenChange() {
+                if (!document.fullscreenElement && 
+                    !document.webkitFullscreenElement && 
+                    !document.mozFullScreenElement && 
+                    !document.msFullscreenElement) {
+                    // 如果退出了原生全屏，也退出我们的CSS全屏
+                    gameContainer.classList.remove('fullscreen');
+                    document.body.style.overflow = 'auto';
+                }
+            }
         });
     </script>
 
