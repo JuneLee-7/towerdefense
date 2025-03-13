@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Sitemap: https://towerdefense.online/sitemap.xml
+
+# 允许所有搜索引擎访问
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# 禁止访问特定文件类型
+User-agent: *
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# 设置爬虫抓取延迟
+Crawl-delay: 10 
