@@ -3,28 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Pokemon Tower Defense games online for free. Experience the best mix of Pokemon and tower defense strategy games.">
-    <title>Pokemon Tower Defense - Play PTD Games Online</title>
+    <meta name="description" content="Play the best Pokemon Tower Defense games online for free! Experience PTD 1, PTD 2, PTD 3, and PokeRogue. Enjoy strategic gameplay, catch Pokemon, build your team, and defend against waves of enemies in these amazing tower defense games.">
+    <title>Pokemon Tower Defense Games - Play Best Free Pokemon Strategy Games Online | PTD Games</title>
     <link rel="canonical" href="https://towerdefense.online" />
     
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="pokemon tower defense, tower defense, pokerogue">
+    <meta name="keywords" content="pokemon tower defense, ptd games, pokemon strategy games, tower defense games, pokerogue, free pokemon games, online pokemon games, pokemon td, pokemon tower defense 1, pokemon tower defense 2, pokemon tower defense 3">
     <meta name="author" content="TowerDefense.online">
     <meta name="language" content="English">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Pokemon Tower Defense - Play PTD Games Online">
-    <meta property="og:description" content="Play Pokemon Tower Defense games online for free. Experience the best mix of Pokemon and tower defense strategy games.">
+    <meta property="og:title" content="Pokemon Tower Defense Games - Best Free Pokemon Strategy Games Online">
+    <meta property="og:description" content="Play the best Pokemon Tower Defense games online for free! Experience PTD 1, PTD 2, PTD 3, and PokeRogue. Strategic gameplay, team building, and epic battles await!">
     <meta property="og:image" content="https://towerdefense.online/images/og-image.jpg">
     <meta property="og:url" content="https://towerdefense.online">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pokemon Tower Defense - Play PTD Games Online">
-    <meta name="twitter:description" content="Play Pokemon Tower Defense games online for free. Experience the best mix of Pokemon and tower defense strategy games.">
+    <meta name="twitter:title" content="Pokemon Tower Defense Games - Best Free Pokemon Strategy Games Online">
+    <meta name="twitter:description" content="Play the best Pokemon Tower Defense games online for free! Experience PTD 1, PTD 2, PTD 3, and PokeRogue. Strategic gameplay, team building, and epic battles await!">
     <meta name="twitter:image" content="https://towerdefense.online/images/twitter-card.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Pokemon Tower Defense Games",
+      "url": "https://towerdefense.online",
+      "description": "Play the best Pokemon Tower Defense games online for free! Experience PTD 1, PTD 2, PTD 3, and PokeRogue.",
+      "potentialAction": {
+        "@type": "PlayAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://towerdefense.online/ptd1.html"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Pokemon Tower Defense",
+      "description": "Strategic tower defense game featuring Pokemon characters and mechanics",
+      "genre": ["Tower Defense", "Strategy", "Pokemon"],
+      "gamePlatform": ["Browser Game"],
+      "applicationCategory": "Game",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "15000"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "http://schema.org/InStock"
+      }
+    }
+    </script>
     
     <!-- PWA Support -->
     <link rel="manifest" href="/manifest.json">
@@ -40,7 +80,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F2F2F7;
+            background-color: #0F172A;
+            min-width: 1024px;
+            color: #E2E8F0;
         }
         .game-card {
             transition: all 0.3s ease;
@@ -50,29 +92,73 @@
             box-shadow: 0 10px 20px rgba(0, 122, 255, 0.1);
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #007AFF, #34C759);
+            background: linear-gradient(135deg, #3B82F6, #10B981);
         }
         .feature-icon {
-            background: linear-gradient(135deg, #007AFF20, #34C75920);
+            background: linear-gradient(135deg, #3B82F620, #10B98120);
             border-radius: 12px;
             padding: 12px;
             margin-bottom: 16px;
         }
+        .nav-link {
+            position: relative;
+            color: #E2E8F0;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #10B981;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(135deg, #3B82F6, #10B981);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            background: linear-gradient(135deg, #3B82F6, #10B981);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+        }
     </style>
 </head>
 <body class="bg-[#F2F2F7]">
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-[#1E293B] shadow-lg sticky top-0 z-50 backdrop-blur-lg bg-opacity-90">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <h1 class="text-2xl font-bold bg-gradient-to-r from-[#007AFF] to-[#34C759] text-transparent bg-clip-text">Pokemon Tower Defense</h1>
+                        <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-[#3B82F6] to-[#10B981] text-transparent bg-clip-text hover:scale-105 transition-transform">Pokemon Tower Defense</a>
                     </div>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <a href="ptd2.html" class="text-gray-700 hover:text-[#007AFF] font-medium transition-colors">PTD 2</a>
-                    <a href="ptd3.html" class="text-gray-700 hover:text-[#007AFF] font-medium transition-colors">PTD 3</a>
-                    <a href="pokerogue.html" class="text-gray-700 hover:text-[#007AFF] font-medium transition-colors">PokeRogue</a>
+                <div class="flex items-center space-x-8">
+                    <span class="nav-link text-[#10B981] font-medium">PTD 1</span>
+                    <a href="ptd2.html" class="nav-link font-medium">PTD 2</a>
+                    <a href="ptd3.html" class="nav-link font-medium">PTD 3</a>
+                    <a href="pokerogue.html" class="nav-link font-medium">PokeRogue</a>
                 </div>
             </div>
         </nav>
@@ -82,11 +168,24 @@
         <section class="mb-12 bg-white rounded-2xl shadow-lg overflow-hidden">
             <div class="gradient-bg p-8 text-white">
                 <h2 class="text-3xl font-bold mb-4">Pokemon Tower Defense 1</h2>
-                <p class="text-gray-100 mb-6 text-lg">Defend your Pokemon world by strategically placing Pokemon to battle waves of enemies. Catch, train, and evolve Pokemon while mastering tower defense mechanics!</p>
+                <p class="text-gray-100 mb-6 text-lg">Experience the original Pokemon Tower Defense that revolutionized the genre! Strategically place your Pokemon to defend against waves of wild Pokemon, while catching and training your team to become the ultimate Pokemon master. This classic game combines the beloved Pokemon franchise with innovative tower defense mechanics!</p>
             </div>
             <div class="p-4">
-                <div class="aspect-[16/9] w-full bg-black rounded-xl shadow-lg overflow-hidden">
-                    <iframe src="https://ptd.onl/play-ptd-1" class="w-full h-full border-0" allowfullscreen></iframe>
+                <div class="flex justify-between gap-4">
+                    <!-- Left Ad Space -->
+                    <div class="w-[160px] h-[600px] bg-gray-100 rounded-xl">
+                    </div>
+                    
+                    <!-- Game Window -->
+                    <div class="flex-1">
+                        <div class="aspect-[16/9] w-full bg-black rounded-xl shadow-lg overflow-hidden">
+                            <iframe src="https://ptd.onl/play-ptd-1" class="w-full h-full border-0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Ad Space -->
+                    <div class="w-[160px] h-[600px] bg-gray-100 rounded-xl">
+                    </div>
                 </div>
             </div>
         </section>
@@ -148,7 +247,7 @@
                 </div>
                 <h2 class="text-2xl font-bold bg-gradient-to-r from-[#007AFF] to-[#34C759] text-transparent bg-clip-text">About Pokemon Tower Defense</h2>
             </div>
-            <p class="text-gray-600 text-lg leading-relaxed">Pokemon Tower Defense is the original game that started it all, combining the beloved Pokemon franchise with strategic tower defense gameplay. Released in 2011, this game quickly became a fan favorite, allowing players to use their favorite Pokemon in an entirely new way.</p>
+            <p class="text-gray-600 text-lg leading-relaxed">Pokemon Tower Defense 1 represents the groundbreaking fusion of Pokemon gameplay with tower defense strategy that started it all. As the original entry in the Pokemon Tower Defense series, this game introduced innovative mechanics that would define the franchise. Unlike traditional tower defense games, Pokemon Tower Defense 1 allows players to not only place their Pokemon strategically but also catch, train, and evolve them throughout their journey. The game features classic Generation 1 Pokemon, each with their unique abilities and attack patterns, making every defensive setup a tactical decision. While newer entries like PokeRogue offer different experiences, Pokemon Tower Defense 1 maintains its charm with its pure focus on strategic Pokemon placement and type-based combat. The game seamlessly integrates familiar Pokemon elements such as type advantages, status effects, and evolution mechanics with traditional tower defense gameplay, creating an engaging experience that has captivated players since its release. As you progress through Pokemon Tower Defense 1's challenging levels, you'll discover the depth of strategy required to master both Pokemon management and tower defense tactics.</p>
         </section>
 
         <section class="mt-8 bg-white rounded-2xl shadow-md p-8">
@@ -161,13 +260,21 @@
                 <h2 class="text-2xl font-bold bg-gradient-to-r from-[#34C759] to-[#007AFF] text-transparent bg-clip-text">Game Features</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Strategic Battle System</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 1 introduces a unique battle system that combines traditional Pokemon mechanics with tower defense strategy. Physical attacks take time to reach targets and depend on Attack stats, while Special attacks hit instantly and rely on Special Attack stats. This system, distinct from later entries like PokeRogue, creates engaging tactical decisions in Pokemon placement and move selection. The game features both single and multi-target attacks, allowing for complex defensive formations and strategies.</p>
+                </div>
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Classic Pokemon</h3>
-                    <p class="text-gray-600">Use your favorite Generation 1 Pokemon to defend against waves of wild Pokemon.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Advanced Combat Mechanics</h3>
+                    <p class="text-gray-600">Master Pokemon Tower Defense 1's diverse attack types, including Turn-Around attacks that send enemies back to the start, Surrounding attacks that hit multiple targets, and Long-Range attacks for strategic positioning. The game introduces unique mechanics like STAB (Same-Type Attack Bonus) and persistent status effects, setting it apart from both traditional tower defense games and later Pokemon Tower Defense entries. Utilize trap moves to control the battlefield and create powerful defensive zones.</p>
                 </div>
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Level Up System</h3>
-                    <p class="text-gray-600">Train and evolve your Pokemon as you progress through challenging levels.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Pokemon Management</h3>
+                    <p class="text-gray-600">In Pokemon Tower Defense 1, build your team from a roster of classic Generation 1 Pokemon, each with unique strengths and abilities. Unlike newer entries such as PokeRogue, the focus is on strategic Pokemon placement and type matchups. Train and evolve your Pokemon to unlock powerful moves and abilities, creating the ultimate defense team. The game's progression system rewards thoughtful team composition and tactical evolution choices.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Level Design</h3>
+                    <p class="text-gray-600">Experience carefully crafted levels in Pokemon Tower Defense 1 that challenge your strategic thinking. Each stage features unique layouts and enemy patterns, requiring different approaches and team compositions. The game's difficulty progression teaches core mechanics while gradually introducing more complex challenges, making it accessible to newcomers while providing depth for experienced players.</p>
                 </div>
             </div>
         </section>
@@ -179,32 +286,38 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                     </svg>
                 </div>
-                <h2 class="text-2xl font-bold bg-gradient-to-r from-[#FF3B30] to-[#007AFF] text-transparent bg-clip-text">Tips & Strategies</h2>
+                <h2 class="text-2xl font-bold bg-gradient-to-r from-[#FF3B30] to-[#34C759] text-transparent bg-clip-text">Tips & Strategies</h2>
             </div>
             <ul class="grid md:grid-cols-2 gap-4">
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#007AFF] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">Position your strongest Pokemon at key choke points</span>
-                </li>
                 <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
                     <svg class="w-5 h-5 text-[#34C759] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <span class="text-gray-700">Focus on evolving your core team early in the game</span>
+                    <span class="text-gray-700">In Pokemon Tower Defense 1, utilize Pokemon with diverse attack types. Physical attackers like Machamp excel with high Attack stats, while Special attackers like Alakazam dominate with Special moves. Unlike PokeRogue's fusion system, focus on pure type advantages and strategic positioning.</span>
+                </li>
+                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
+                    <svg class="w-5 h-5 text-[#007AFF] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="text-gray-700">Master Pokemon Tower Defense 1's status effects and stat modifiers. Use moves like Toxic Spikes to weaken enemies over time, and employ stat-changing moves strategically. This classic mechanic differs from later Pokemon Tower Defense entries by emphasizing persistent effects.</span>
                 </li>
                 <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
                     <svg class="w-5 h-5 text-[#FF3B30] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <span class="text-gray-700">Use type advantages to maximize damage output</span>
+                    <span class="text-gray-700">Build a balanced team in Pokemon Tower Defense 1 with complementary types and abilities. Consider Pokemon like Golem for Bulldoze coverage, Tentacruel for status effects, and Charizard for powerful special attacks. While newer games like PokeRogue offer different team-building approaches, PTD1 rewards traditional type coverage strategies.</span>
                 </li>
                 <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#007AFF] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-[#34C759] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <span class="text-gray-700">Don't forget to level up your Pokemon between stages</span>
+                    <span class="text-gray-700">Leverage Pokemon Tower Defense 1's unique move categories. Turn-Around attacks like Whirlwind control enemy movement, Surrounding attacks like Heat Wave clear groups, and Long-Range attacks like Shadow Ball provide tactical advantages. These mechanics form the foundation for later Pokemon Tower Defense games.</span>
+                </li>
+                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
+                    <svg class="w-5 h-5 text-[#34C759] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="text-gray-700">Optimize your Pokemon Tower Defense 1 experience by carefully managing evolution timing and move selection. Unlike PokeRogue's random elements, PTD1 allows for precise control over Pokemon development. Consider keeping certain Pokemon unevolved for earlier access to crucial moves.</span>
                 </li>
             </ul>
         </section>

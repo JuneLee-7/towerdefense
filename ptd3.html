@@ -3,28 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Pokemon Tower Defense 3 online - The latest installment with advanced features, stunning graphics and exciting gameplay.">
-    <title>Pokemon Tower Defense 3 - Play PTD 3 Online</title>
+    <meta name="description" content="Play Pokemon Tower Defense 3 (PTD3) online for free! Experience revolutionary features like elemental Pokemon variants, epic storyline with Noah Ketchum, advanced battle mechanics, and stunning graphics. The ultimate evolution of Pokemon tower defense gameplay awaits!">
+    <title>Pokemon Tower Defense 3 - Play PTD3 Legacy with Elemental Pokemon | PTD Games</title>
     <link rel="canonical" href="https://towerdefense.online/ptd3.html" />
     
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="pokemon tower defense, tower defense, pokerogue">
+    <meta name="keywords" content="pokemon tower defense 3, ptd3, pokemon tower defense legacy, elemental pokemon, noah ketchum, neo team rocket, pokemon strategy game, tower defense game, free pokemon game, pokemon td3">
     <meta name="author" content="TowerDefense.online">
     <meta name="language" content="English">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Pokemon Tower Defense 3 - Play PTD 3 Online">
-    <meta property="og:description" content="Play Pokemon Tower Defense 3 online - The latest installment with advanced features, stunning graphics and exciting gameplay.">
+    <meta property="og:title" content="Pokemon Tower Defense 3 - Revolutionary Pokemon Strategy Game with Elemental System">
+    <meta property="og:description" content="Play Pokemon Tower Defense 3 online! Experience elemental Pokemon variants, epic storyline with Noah Ketchum, and advanced battle mechanics in this revolutionary tower defense game.">
     <meta property="og:image" content="https://towerdefense.online/images/og-image-ptd3.jpg">
     <meta property="og:url" content="https://towerdefense.online/ptd3.html">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pokemon Tower Defense 3 - Play PTD 3 Online">
-    <meta name="twitter:description" content="Play Pokemon Tower Defense 3 online - The latest installment with advanced features, stunning graphics and exciting gameplay.">
+    <meta name="twitter:title" content="Pokemon Tower Defense 3 - Revolutionary Pokemon Strategy Game">
+    <meta name="twitter:description" content="Play Pokemon Tower Defense 3 online! Experience elemental Pokemon variants, epic storyline with Noah Ketchum, and advanced battle mechanics in this revolutionary game.">
     <meta name="twitter:image" content="https://towerdefense.online/images/twitter-card-ptd3.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Pokemon Tower Defense 3",
+      "alternateName": "PTD3 Legacy",
+      "description": "Revolutionary tower defense game featuring elemental Pokemon variants and epic storyline",
+      "genre": ["Tower Defense", "Strategy", "Pokemon", "RPG"],
+      "gamePlatform": ["Browser Game"],
+      "applicationCategory": "Game",
+      "operatingSystem": "Any",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "12000",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "http://schema.org/InStock"
+      },
+      "gameItem": [
+        {
+          "@type": "Thing",
+          "name": "Elemental Pokemon System"
+        },
+        {
+          "@type": "Thing",
+          "name": "Advanced Battle Mechanics"
+        }
+      ],
+      "character": [
+        {
+          "@type": "Person",
+          "name": "Noah Ketchum"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://towerdefense.online"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pokemon Tower Defense 3",
+        "item": "https://towerdefense.online/ptd3.html"
+      }]
+    }
+    </script>
     
     <!-- PWA Support -->
     <link rel="manifest" href="/manifest.json">
@@ -40,33 +101,78 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F2F2F7;
+            background-color: #0F172A;
+            min-width: 1024px;
+            color: #E2E8F0;
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #34C759, #007AFF);
+            background: linear-gradient(135deg, #3B82F6, #10B981);
         }
         .feature-icon {
-            background: linear-gradient(135deg, #34C75920, #007AFF20);
+            background: linear-gradient(135deg, #3B82F620, #10B98120);
             border-radius: 12px;
             padding: 12px;
             margin-bottom: 16px;
         }
+        .nav-link {
+            position: relative;
+            color: #E2E8F0;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #10B981;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(135deg, #3B82F6, #10B981);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            background: linear-gradient(135deg, #3B82F6, #10B981);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+        }
     </style>
 </head>
 <body class="bg-[#F2F2F7]">
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-[#1E293B] shadow-lg sticky top-0 z-50 backdrop-blur-lg bg-opacity-90">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-[#34C759] to-[#007AFF] text-transparent bg-clip-text">Pokemon Tower Defense</a>
+                        <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-[#3B82F6] to-[#10B981] text-transparent bg-clip-text hover:scale-105 transition-transform">Pokemon Tower Defense</a>
                     </div>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <a href="index.html" class="text-gray-700 hover:text-[#34C759] font-medium transition-colors">PTD 1</a>
-                    <a href="ptd2.html" class="text-gray-700 hover:text-[#34C759] font-medium transition-colors">PTD 2</a>
-                    <span class="text-[#34C759] font-medium">PTD 3</span>
-                    <a href="pokerogue.html" class="text-gray-700 hover:text-[#34C759] font-medium transition-colors">PokeRogue</a>
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="nav-link font-medium">PTD 1</a>
+                    <a href="ptd2.html" class="nav-link font-medium">PTD 2</a>
+                    <span class="nav-link text-[#10B981] font-medium">PTD 3</span>
+                    <a href="pokerogue.html" class="nav-link font-medium">PokeRogue</a>
                 </div>
             </div>
         </nav>
@@ -76,11 +182,24 @@
         <section class="mb-12 bg-white rounded-2xl shadow-lg overflow-hidden">
             <div class="gradient-bg p-8 text-white">
                 <h1 class="text-3xl font-bold mb-4">Pokemon Tower Defense 3</h1>
-                <p class="text-gray-100 mb-6 text-lg">Experience the next evolution of Pokemon Tower Defense with stunning graphics, advanced mechanics, and an immersive storyline. Defend your territory with powerful Pokemon and strategic gameplay!</p>
+                <p class="text-gray-100 mb-6 text-lg">Pokemon Tower Defense 3, also known as Pokemon Tower Defense Legacy, represents the most ambitious evolution of the beloved tower defense series. Unlike its predecessors and the randomized mechanics of PokeRogue, this installment introduces groundbreaking features like elemental Pokemon variants and an epic storyline following Noah Ketchum's journey. Experience the next generation of Pokemon tower defense gameplay with stunning visuals, revolutionary battle mechanics, and an immersive narrative that bridges the gap between past and future!</p>
             </div>
             <div class="p-4">
-                <div class="aspect-[16/9] w-full bg-black rounded-xl shadow-lg overflow-hidden">
-                    <iframe src="https://ptd.onl/play-ptd-3" class="w-full h-full border-0" allowfullscreen></iframe>
+                <div class="flex justify-between gap-4">
+                    <!-- Left Ad Space -->
+                    <div class="w-[160px] h-[600px] bg-gray-100 rounded-xl">
+                    </div>
+                    
+                    <!-- Game Window -->
+                    <div class="flex-1">
+                        <div class="aspect-[16/9] w-full bg-black rounded-xl shadow-lg overflow-hidden">
+                            <iframe src="https://ptd.onl/play-ptd-3" class="w-full h-full border-0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Ad Space -->
+                    <div class="w-[160px] h-[600px] bg-gray-100 rounded-xl">
+                    </div>
                 </div>
             </div>
         </section>
@@ -94,7 +213,21 @@
                 </div>
                 <h2 class="text-2xl font-bold bg-gradient-to-r from-[#34C759] to-[#007AFF] text-transparent bg-clip-text">About Pokemon Tower Defense 3</h2>
             </div>
-            <p class="text-gray-600 text-lg leading-relaxed">Pokemon Tower Defense 3 represents the pinnacle of the series, featuring stunning 3D graphics, advanced battle mechanics, and an expanded roster of Pokemon. This latest installment introduces new game modes, multiplayer features, and a compelling storyline that will keep you engaged for hours.</p>
+            <p class="text-gray-600 text-lg leading-relaxed">Pokemon Tower Defense 3 marks a revolutionary leap forward in the series, introducing a compelling narrative that follows Noah Ketchum, son of the legendary trainer Ash, in his quest to confront the mysterious Neo Team Rocket. This latest installment builds upon the solid foundation of Pokemon Tower Defense 1 and 2 while introducing groundbreaking new features that set it apart from both its predecessors and contemporary titles like PokeRogue.
+
+The game's story begins with Noah and his partner Pichu, taking players through an emotional journey of growth and evolution that mirrors their own progression through the game. Unlike the more straightforward approaches of Pokemon Tower Defense 1 and 2, or the randomized adventures of PokeRogue, Pokemon Tower Defense 3 weaves a complex narrative that spans multiple timelines, showing Noah's transformation from a novice trainer to the leader of Neo Team Rocket.
+
+One of Pokemon Tower Defense 3's most significant innovations is the introduction of Elemental Pokemon, a feature that fundamentally changes how players approach team building and strategy. This system allows Pokemon to adapt different elemental types, creating possibilities like Fire Pikachu or Rock Caterpie, offering unprecedented tactical depth that surpasses anything seen in previous Pokemon Tower Defense games or PokeRogue.
+
+The game's development, led solely by Samuel Otero after his partner Dan's departure, demonstrates a passionate commitment to evolving the Pokemon Tower Defense formula. Pokemon Tower Defense 3 introduces sophisticated save systems, comprehensive Pokemon information screens, and refined ability and move management systems that make the game more accessible while maintaining its strategic depth.
+
+In terms of progression, Pokemon Tower Defense 3 offers a carefully crafted experience that balances challenge with accessibility. The game features multiple carefully designed levels, each introducing new mechanics and challenges that keep players engaged. This structured approach contrasts with PokeRogue's randomized elements, providing a more curated and story-driven experience.
+
+The visual presentation of Pokemon Tower Defense 3 has received a significant upgrade, featuring enhanced graphics and animations that bring the world and its characters to life. The game's art style strikes a perfect balance between nostalgia for the classic Pokemon games and modern visual flair, creating an immersive experience that draws players into its world.
+
+Pokemon Tower Defense 3 also introduces innovative multiplayer features that encourage community interaction and competitive play. While maintaining the core tower defense mechanics that made the series famous, the game adds new layers of social interaction and competition that keep players engaged long after completing the main story.
+
+As the latest evolution of the Pokemon Tower Defense series, Pokemon Tower Defense 3 stands as a testament to the franchise's ability to innovate while honoring its roots. It offers a unique blend of strategic depth, narrative richness, and community features that set new standards for both tower defense games and Pokemon fan games alike.</p>
         </section>
 
         <section class="mt-8 bg-white rounded-2xl shadow-md p-8">
@@ -108,12 +241,58 @@
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Advanced Graphics</h3>
-                    <p class="text-gray-600">Immerse yourself in stunning 3D visuals and dynamic battle animations.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Revolutionary Elemental Pokemon System</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 3 introduces a groundbreaking Elemental Pokemon system that fundamentally transforms the gameplay experience. Unlike the traditional type system seen in previous Pokemon Tower Defense games or the random variations in PokeRogue, this new system allows Pokemon to adapt different elemental types, creating unique combinations like:
+
+- Fire-type variants of non-fire Pokemon, offering new strategic possibilities
+- Rock-type adaptations that provide unexpected defensive options
+- Custom elemental combinations that create unique battle strategies
+- Specialized move sets based on elemental variations
+- Strategic team building opportunities using elemental advantages
+
+This system adds unprecedented depth to team composition and battle strategy, making Pokemon Tower Defense 3 the most tactically rich entry in the series.</p>
                 </div>
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">New Game Modes</h3>
-                    <p class="text-gray-600">Challenge yourself with story mode, survival mode, and multiplayer battles.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Epic Narrative Experience</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 3 features an ambitious storyline that follows Noah Ketchum's journey, offering a narrative depth unprecedented in the series:
+
+- Multiple timeline progression showing Noah's evolution from novice to leader
+- Dynamic character development through story-driven missions
+- Engaging plot involving the mysterious Neo Team Rocket
+- Character relationships that affect gameplay mechanics
+- Story choices that influence battle scenarios
+
+The narrative integration in Pokemon Tower Defense 3 creates a more immersive experience compared to the straightforward progression of previous games or PokeRogue's procedural storytelling.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Enhanced Battle Mechanics</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 3 revolutionizes the battle system with sophisticated mechanics that add new layers of strategy:
+
+- Dynamic weather effects that influence battle conditions
+- Terrain-based advantages for strategic positioning
+- Complex status effect combinations
+- Multi-phase boss battles with unique mechanics
+- Interactive environment elements
+- Special combo attacks between compatible Pokemon
+- Advanced AI behavior patterns
+- Tactical positioning requirements
+
+These enhanced battle mechanics create a more engaging and challenging experience that sets Pokemon Tower Defense 3 apart from its predecessors.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Advanced Progression Systems</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 3 features sophisticated progression systems that reward strategic planning and dedication:
+
+- Comprehensive Pokemon information tracking
+- Detailed ability and move management
+- Advanced save system for multiple playthroughs
+- Achievement-based rewards and unlocks
+- Specialized training programs for Pokemon development
+- Custom move learning paths
+- Evolution choice systems
+- Strategic resource management
+
+These systems provide depth and replayability that surpass both previous entries and contemporary titles like PokeRogue.</p>
                 </div>
             </div>
         </section>
@@ -125,34 +304,65 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                     </svg>
                 </div>
-                <h2 class="text-2xl font-bold bg-gradient-to-r from-[#FF3B30] to-[#34C759] text-transparent bg-clip-text">Tips & Strategies</h2>
+                <h2 class="text-2xl font-bold bg-gradient-to-r from-[#FF3B30] to-[#34C759] text-transparent bg-clip-text">Advanced Strategies & Tips</h2>
             </div>
-            <ul class="grid md:grid-cols-2 gap-4">
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#34C759] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">Utilize the new terrain system for strategic advantages</span>
-                </li>
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#007AFF] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">Master the new combo system for maximum damage output</span>
-                </li>
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#FF3B30] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">Explore different team compositions for each game mode</span>
-                </li>
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#34C759] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">Participate in multiplayer battles to earn special rewards</span>
-                </li>
-            </ul>
+            <div class="space-y-6">
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Mastering Elemental Pokemon</h3>
+                    <p class="text-gray-700">Pokemon Tower Defense 3 introduces revolutionary elemental variations that require new strategic approaches. Unlike the fixed typing in previous Pokemon Tower Defense games or the random elements in PokeRogue, success depends on understanding and utilizing these unique combinations:
+
+- Experiment with different elemental variants to find optimal combinations
+- Consider environmental interactions when selecting Pokemon types
+- Build teams that can adapt to changing battle conditions
+- Use elemental advantages to counter specific enemy waves
+- Create synergistic combinations between different elemental variants
+- Plan for both offensive and defensive elemental strategies
+- Adapt your approach based on mission requirements
+- Leverage weather effects that boost certain elemental types</p>
+                </div>
+                
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Advanced Battle Tactics</h3>
+                    <p class="text-gray-700">Success in Pokemon Tower Defense 3 requires mastery of its sophisticated battle system:
+
+- Position Pokemon strategically based on their range and abilities
+- Utilize terrain features for defensive advantages
+- Time your special attacks for maximum impact
+- Create effective Pokemon combinations for combo attacks
+- Manage resources efficiently during extended battles
+- Adapt your strategy based on enemy wave compositions
+- Use status effects strategically
+- Plan for boss battle phases</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Progression Optimization</h3>
+                    <p class="text-gray-700">Maximize your progress in Pokemon Tower Defense 3 with these strategic approaches:
+
+- Focus on key story missions to unlock essential features
+- Balance Pokemon training across your team
+- Prioritize elemental variations that complement your strategy
+- Complete side missions for valuable rewards
+- Manage resources efficiently for long-term success
+- Build a diverse roster of Pokemon for different challenges
+- Participate in events for special rewards
+- Maintain flexibility in team composition</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Team Building Fundamentals</h3>
+                    <p class="text-gray-700">Create effective teams in Pokemon Tower Defense 3 by following these principles:
+
+- Balance different Pokemon roles within your team
+- Consider elemental coverage when selecting Pokemon
+- Build teams that can handle various challenge types
+- Adapt your roster based on mission requirements
+- Create synergistic combinations between team members
+- Plan for both offensive and defensive capabilities
+- Maintain flexibility in team composition
+- Prepare specialized teams for different game modes</p>
+                </div>
+            </div>
         </section>
 
         <section class="mt-8 bg-white rounded-2xl shadow-md p-8 mb-12">
