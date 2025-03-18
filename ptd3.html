@@ -9,7 +9,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="pokemon tower defense 3, ptd3, pokemon tower defense legacy, elemental pokemon, noah ketchum, neo team rocket, pokemon strategy game, tower defense game, free pokemon game, pokemon td3">
+    <meta name="keywords" content="pokemon tower defense, ptd3, pokemon tower defense legacy, elemental pokemon, noah ketchum, neo team rocket, pokemon strategy game, tower defense game, free pokemon game, pokemon td3">
     <meta name="author" content="TowerDefense.online">
     <meta name="language" content="English">
     
@@ -88,13 +88,15 @@
     </script>
     
     <!-- PWA Support -->
+    <!-- 
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#007AFF">
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    -->
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="icons/pokemon-tower-defense.png">
+    <link rel="shortcut icon" type="image/png" href="icons/pokemon-tower-defense.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -164,7 +166,8 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
+                    <div class="flex-shrink-0 flex items-center space-x-4">
+                        <img src="icons/pokemon-tower-defense.png" alt="Pokemon Logo" class="h-8 w-auto" />
                         <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-[#3B82F6] to-[#10B981] text-transparent bg-clip-text hover:scale-105 transition-transform">Pokemon Tower Defense</a>
                     </div>
                 </div>
@@ -173,6 +176,7 @@
                     <a href="ptd2.html" class="nav-link font-medium">PTD 2</a>
                     <span class="nav-link text-[#10B981] font-medium">PTD 3</span>
                     <a href="pokerogue.html" class="nav-link font-medium">PokeRogue</a>
+                    <a href="ptd-hacked.html" class="nav-link font-medium">PTD Hacked</a>
                 </div>
             </div>
         </nav>
@@ -182,7 +186,11 @@
         <section class="mb-12 bg-white rounded-2xl shadow-lg overflow-hidden">
             <div class="gradient-bg p-8 text-white">
                 <h1 class="text-3xl font-bold mb-4">Pokemon Tower Defense 3</h1>
-                <p class="text-gray-100 mb-6 text-lg">Pokemon Tower Defense 3, also known as Pokemon Tower Defense Legacy, represents the most ambitious evolution of the beloved tower defense series. Unlike its predecessors and the randomized mechanics of PokeRogue, this installment introduces groundbreaking features like elemental Pokemon variants and an epic storyline following Noah Ketchum's journey. Experience the next generation of Pokemon tower defense gameplay with stunning visuals, revolutionary battle mechanics, and an immersive narrative that bridges the gap between past and future!</p>
+                <div class="space-y-6">
+                    <div class="mb-8">
+                        <p class="text-gray-100 mb-4">Pokemon Tower Defense 3, also known as Pokemon Tower Defense Legacy, represents the most ambitious evolution of the beloved tower defense series. Unlike its predecessors and the randomized mechanics of PokeRogue, this installment introduces groundbreaking features like elemental Pokemon variants and an epic storyline following Noah Ketchum's journey. Experience the next generation of Pokemon tower defense gameplay with stunning visuals, revolutionary battle mechanics, and an immersive narrative that bridges the gap between past and future!</p>
+                    </div>
+                </div>
             </div>
             <div class="p-4">
                 <div class="flex justify-between gap-4">
@@ -192,8 +200,17 @@
                     
                     <!-- Game Window -->
                     <div class="flex-1">
-                        <div class="aspect-[16/9] w-full bg-black rounded-xl shadow-lg overflow-hidden">
-                            <iframe src="https://ptd.onl/play-ptd-3" class="w-full h-full border-0" allowfullscreen></iframe>
+                        <div class="aspect-[16/9] w-full bg-black rounded-xl shadow-lg overflow-hidden relative" id="gameContainer">
+                            <div class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75" id="gameOverlay">
+                                <button onclick="loadGame()" class="px-8 py-4 bg-[#34C759] hover:bg-[#2FB344] text-white font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all flex items-center space-x-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Play Now</span>
+                                </button>
+                            </div>
+                            <div id="gameFrame" class="w-full h-full"></div>
                         </div>
                     </div>
                     
@@ -237,62 +254,128 @@ As the latest evolution of the Pokemon Tower Defense series, Pokemon Tower Defen
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                     </svg>
                 </div>
-                <h2 class="text-2xl font-bold bg-gradient-to-r from-[#007AFF] to-[#34C759] text-transparent bg-clip-text">Game Features</h2>
+                <h2 class="text-2xl font-bold bg-gradient-to-r from-[#007AFF] to-[#34C759] text-transparent bg-clip-text">Revolutionary Features in Pokemon Tower Defense 3</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Revolutionary Elemental Pokemon System</h3>
-                    <p class="text-gray-600">Pokemon Tower Defense 3 introduces a groundbreaking Elemental Pokemon system that fundamentally transforms the gameplay experience. Unlike the traditional type system seen in previous Pokemon Tower Defense games or the random variations in PokeRogue, this new system allows Pokemon to adapt different elemental types, creating unique combinations like:
-
-- Fire-type variants of non-fire Pokemon, offering new strategic possibilities
-- Rock-type adaptations that provide unexpected defensive options
-- Custom elemental combinations that create unique battle strategies
-- Specialized move sets based on elemental variations
-- Strategic team building opportunities using elemental advantages
-
-This system adds unprecedented depth to team composition and battle strategy, making Pokemon Tower Defense 3 the most tactically rich entry in the series.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Advanced Battle System</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 3 completely revolutionizes how battles work:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Strategic positioning matters more than ever</li>
+                        <li>Real-time combat with multiple enemies</li>
+                        <li>Complex status effect combinations</li>
+                        <li>Interactive environment elements</li>
+                        <li>Weather system that affects battle conditions</li>
+                        <li>Multi-phase boss encounters</li>
+                    </ul>
                 </div>
+
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Epic Narrative Experience</h3>
-                    <p class="text-gray-600">Pokemon Tower Defense 3 features an ambitious storyline that follows Noah Ketchum's journey, offering a narrative depth unprecedented in the series:
-
-- Multiple timeline progression showing Noah's evolution from novice to leader
-- Dynamic character development through story-driven missions
-- Engaging plot involving the mysterious Neo Team Rocket
-- Character relationships that affect gameplay mechanics
-- Story choices that influence battle scenarios
-
-The narrative integration in Pokemon Tower Defense 3 creates a more immersive experience compared to the straightforward progression of previous games or PokeRogue's procedural storytelling.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Elemental Pokemon System</h3>
+                    <p class="text-gray-600">One of PTD3's most groundbreaking features:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Create unique elemental variants of any Pokemon</li>
+                        <li>Mix and match types for strategic advantage</li>
+                        <li>Special moves unique to elemental variants</li>
+                        <li>Rare elemental forms with enhanced abilities</li>
+                        <li>Complex type advantage system</li>
+                    </ul>
                 </div>
+
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Enhanced Battle Mechanics</h3>
-                    <p class="text-gray-600">Pokemon Tower Defense 3 revolutionizes the battle system with sophisticated mechanics that add new layers of strategy:
-
-- Dynamic weather effects that influence battle conditions
-- Terrain-based advantages for strategic positioning
-- Complex status effect combinations
-- Multi-phase boss battles with unique mechanics
-- Interactive environment elements
-- Special combo attacks between compatible Pokemon
-- Advanced AI behavior patterns
-- Tactical positioning requirements
-
-These enhanced battle mechanics create a more engaging and challenging experience that sets Pokemon Tower Defense 3 apart from its predecessors.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Story and Progression</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 3 features the deepest narrative yet:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Play as Noah Ketchum in a compelling storyline</li>
+                        <li>Multiple story paths and decisions</li>
+                        <li>Character relationships affect gameplay</li>
+                        <li>Dynamic world that changes as you progress</li>
+                        <li>Hidden secrets and side quests</li>
+                    </ul>
                 </div>
+
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Advanced Progression Systems</h3>
-                    <p class="text-gray-600">Pokemon Tower Defense 3 features sophisticated progression systems that reward strategic planning and dedication:
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Team Building and Strategy</h3>
+                    <p class="text-gray-600">Deep strategic elements that set PTD3 apart:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Build synergistic team compositions</li>
+                        <li>Customize move sets and abilities</li>
+                        <li>Develop different strategies for various challenges</li>
+                        <li>Adapt to changing battle conditions</li>
+                        <li>Master the timing of special abilities</li>
+                    </ul>
+                </div>
 
-- Comprehensive Pokemon information tracking
-- Detailed ability and move management
-- Advanced save system for multiple playthroughs
-- Achievement-based rewards and unlocks
-- Specialized training programs for Pokemon development
-- Custom move learning paths
-- Evolution choice systems
-- Strategic resource management
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Enhanced Graphics and UI</h3>
+                    <p class="text-gray-600">Visual improvements that enhance the experience:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Improved battle animations</li>
+                        <li>Better special effects</li>
+                        <li>Cleaner user interface</li>
+                        <li>More detailed Pokemon sprites</li>
+                        <li>Dynamic weather effects</li>
+                    </ul>
+                </div>
 
-These systems provide depth and replayability that surpass both previous entries and contemporary titles like PokeRogue.</p>
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Multiplayer Features</h3>
+                    <p class="text-gray-600">Connect with other trainers:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Trade Pokemon with players worldwide</li>
+                        <li>Participate in special events</li>
+                        <li>Compare strategies and teams</li>
+                        <li>Join community challenges</li>
+                        <li>Share achievements and progress</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Progression System</h3>
+                    <p class="text-gray-600">Deep character development:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Complex evolution paths</li>
+                        <li>Multiple training options</li>
+                        <li>Skill tree system</li>
+                        <li>Achievement rewards</li>
+                        <li>Special training facilities</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Battle Environments</h3>
+                    <p class="text-gray-600">Diverse locations affect strategy:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Different terrain types</li>
+                        <li>Environmental hazards</li>
+                        <li>Strategic choke points</li>
+                        <li>Interactive elements</li>
+                        <li>Weather effects</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Special Events</h3>
+                    <p class="text-gray-600">Regular content updates:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Limited-time challenges</li>
+                        <li>Seasonal events</li>
+                        <li>Mystery gift distributions</li>
+                        <li>Community competitions</li>
+                        <li>Special rewards</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Customization Options</h3>
+                    <p class="text-gray-600">Make your experience unique:</p>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2 mt-2">
+                        <li>Customize Pokemon movesets</li>
+                        <li>Choose evolution paths</li>
+                        <li>Select special abilities</li>
+                        <li>Create unique team combinations</li>
+                        <li>Design battle strategies</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -304,63 +387,127 @@ These systems provide depth and replayability that surpass both previous entries
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                     </svg>
                 </div>
-                <h2 class="text-2xl font-bold bg-gradient-to-r from-[#FF3B30] to-[#34C759] text-transparent bg-clip-text">Advanced Strategies & Tips</h2>
+                <h2 class="text-2xl font-bold bg-gradient-to-r from-[#FF3B30] to-[#34C759] text-transparent bg-clip-text">Advanced Strategies for Pokemon Tower Defense 3</h2>
             </div>
             <div class="space-y-6">
                 <div class="p-6 rounded-xl bg-[#F2F2F7]">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Mastering Elemental Pokemon</h3>
-                    <p class="text-gray-700">Pokemon Tower Defense 3 introduces revolutionary elemental variations that require new strategic approaches. Unlike the fixed typing in previous Pokemon Tower Defense games or the random elements in PokeRogue, success depends on understanding and utilizing these unique combinations:
-
-- Experiment with different elemental variants to find optimal combinations
-- Consider environmental interactions when selecting Pokemon types
-- Build teams that can adapt to changing battle conditions
-- Use elemental advantages to counter specific enemy waves
-- Create synergistic combinations between different elemental variants
-- Plan for both offensive and defensive elemental strategies
-- Adapt your approach based on mission requirements
-- Leverage weather effects that boost certain elemental types</p>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Team Building Fundamentals</h3>
+                    <p class="text-gray-700">Master the basics of creating effective teams:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Balance different Pokemon roles</li>
+                        <li>Consider type coverage</li>
+                        <li>Create synergistic combinations</li>
+                        <li>Adapt to mission requirements</li>
+                        <li>Plan for various challenges</li>
+                    </ul>
                 </div>
                 
                 <div class="p-6 rounded-xl bg-[#F2F2F7]">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Advanced Battle Tactics</h3>
-                    <p class="text-gray-700">Success in Pokemon Tower Defense 3 requires mastery of its sophisticated battle system:
-
-- Position Pokemon strategically based on their range and abilities
-- Utilize terrain features for defensive advantages
-- Time your special attacks for maximum impact
-- Create effective Pokemon combinations for combo attacks
-- Manage resources efficiently during extended battles
-- Adapt your strategy based on enemy wave compositions
-- Use status effects strategically
-- Plan for boss battle phases</p>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Battle Positioning</h3>
+                    <p class="text-gray-700">Strategic placement is crucial in Pokemon Tower Defense 3:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Understand range and coverage</li>
+                        <li>Create defensive choke points</li>
+                        <li>Position support Pokemon effectively</li>
+                        <li>Adapt to enemy movement patterns</li>
+                        <li>Use terrain to your advantage</li>
+                    </ul>
                 </div>
 
                 <div class="p-6 rounded-xl bg-[#F2F2F7]">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Progression Optimization</h3>
-                    <p class="text-gray-700">Maximize your progress in Pokemon Tower Defense 3 with these strategic approaches:
-
-- Focus on key story missions to unlock essential features
-- Balance Pokemon training across your team
-- Prioritize elemental variations that complement your strategy
-- Complete side missions for valuable rewards
-- Manage resources efficiently for long-term success
-- Build a diverse roster of Pokemon for different challenges
-- Participate in events for special rewards
-- Maintain flexibility in team composition</p>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Resource Management</h3>
+                    <p class="text-gray-700">Optimize your resources for maximum efficiency:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Prioritize key upgrades</li>
+                        <li>Manage Pokemon evolution timing</li>
+                        <li>Balance team development</li>
+                        <li>Save resources for emergencies</li>
+                        <li>Invest in long-term growth</li>
+                    </ul>
                 </div>
 
                 <div class="p-6 rounded-xl bg-[#F2F2F7]">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Team Building Fundamentals</h3>
-                    <p class="text-gray-700">Create effective teams in Pokemon Tower Defense 3 by following these principles:
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Advanced Combat Tactics</h3>
+                    <p class="text-gray-700">Master these techniques to excel in PTD3:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Chain status effects</li>
+                        <li>Time special abilities</li>
+                        <li>Use weather advantages</li>
+                        <li>Create combo attacks</li>
+                        <li>Control battlefield flow</li>
+                    </ul>
+                </div>
 
-- Balance different Pokemon roles within your team
-- Consider elemental coverage when selecting Pokemon
-- Build teams that can handle various challenge types
-- Adapt your roster based on mission requirements
-- Create synergistic combinations between team members
-- Plan for both offensive and defensive capabilities
-- Maintain flexibility in team composition
-- Prepare specialized teams for different game modes</p>
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Boss Battle Strategies</h3>
+                    <p class="text-gray-700">Tackle tough encounters in Pokemon Tower Defense 3:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Study boss patterns</li>
+                        <li>Prepare specific counters</li>
+                        <li>Manage multiple threats</li>
+                        <li>Time your powerful moves</li>
+                        <li>Adapt to phase changes</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Elemental Pokemon Usage</h3>
+                    <p class="text-gray-700">Maximize the potential of elemental variants:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Create effective type combinations</li>
+                        <li>Use environmental advantages</li>
+                        <li>Build around weather effects</li>
+                        <li>Develop specialized roles</li>
+                        <li>Counter enemy elements</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Progression Tips</h3>
+                    <p class="text-gray-700">Optimize your journey through PTD3:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Focus on key story missions</li>
+                        <li>Complete side objectives</li>
+                        <li>Train efficiently</li>
+                        <li>Build diverse teams</li>
+                        <li>Unlock important features</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Defensive Strategies</h3>
+                    <p class="text-gray-700">Protect your objectives effectively:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Create layered defenses</li>
+                        <li>Use status effects</li>
+                        <li>Control enemy movement</li>
+                        <li>Support your frontline</li>
+                        <li>Prepare for emergencies</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Special Event Tactics</h3>
+                    <p class="text-gray-700">Excel in PTD3's special content:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Prepare for different challenges</li>
+                        <li>Adapt to unique rules</li>
+                        <li>Build specialized teams</li>
+                        <li>Use event-specific strategies</li>
+                        <li>Maximize rewards</li>
+                    </ul>
+                </div>
+
+                <div class="p-6 rounded-xl bg-[#F2F2F7]">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Competitive Tips</h3>
+                    <p class="text-gray-700">Succeed in multiplayer aspects:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2 mt-2">
+                        <li>Study the meta</li>
+                        <li>Create counter strategies</li>
+                        <li>Practice team combinations</li>
+                        <li>Learn from others</li>
+                        <li>Stay updated on changes</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -396,5 +543,23 @@ These systems provide depth and replayability that surpass both previous entries
             <p class="text-center text-gray-500">&copy; 2024 TowerDefense.online - All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        function loadGame() {
+            const gameFrame = document.getElementById('gameFrame');
+            const gameOverlay = document.getElementById('gameOverlay');
+            
+            const iframe = document.createElement('iframe');
+            iframe.src = "https://www.miniplay.com/embed/pokemon-tower-defense-3";
+            iframe.className = "w-full h-full border-0";
+            iframe.frameBorder = "0";
+            iframe.allowFullscreen = true;
+            iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms');
+            iframe.loading = "lazy";
+            
+            gameFrame.appendChild(iframe);
+            gameOverlay.style.display = 'none';
+        }
+    </script>
 </body>
 </html> 

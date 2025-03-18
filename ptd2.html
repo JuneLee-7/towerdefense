@@ -9,7 +9,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="pokemon tower defense 2, ptd2, pokemon strategy game, tower defense game, free pokemon game, pokemon td2, pokemon generations, advanced pokemon battles, team building">
+    <meta name="keywords" content="pokemon tower defense, ptd2, pokemon strategy game, tower defense game, free pokemon game, pokemon td2, pokemon generations, advanced pokemon battles, team building">
     <meta name="author" content="TowerDefense.online">
     <meta name="language" content="English">
     
@@ -82,13 +82,15 @@
     </script>
     
     <!-- PWA Support -->
+    <!-- 
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#007AFF">
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    -->
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="icons/pokemon-tower-defense.png">
+    <link rel="shortcut icon" type="image/png" href="icons/pokemon-tower-defense.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -158,7 +160,8 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
+                    <div class="flex-shrink-0 flex items-center space-x-4">
+                        <img src="icons/pokemon-tower-defense.png" alt="Pokemon Logo" class="h-8 w-auto" />
                         <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-[#3B82F6] to-[#10B981] text-transparent bg-clip-text hover:scale-105 transition-transform">Pokemon Tower Defense</a>
                     </div>
                 </div>
@@ -167,6 +170,7 @@
                     <span class="nav-link text-[#10B981] font-medium">PTD 2</span>
                     <a href="ptd3.html" class="nav-link font-medium">PTD 3</a>
                     <a href="pokerogue.html" class="nav-link font-medium">PokeRogue</a>
+                    <a href="ptd-hacked.html" class="nav-link font-medium">PTD Hacked</a>
                 </div>
             </div>
         </nav>
@@ -176,7 +180,9 @@
         <section class="mb-12 bg-white rounded-2xl shadow-lg overflow-hidden">
             <div class="gradient-bg p-8 text-white">
                 <h1 class="text-3xl font-bold mb-4">Pokemon Tower Defense 2</h1>
-                <p class="text-gray-100 mb-6 text-lg leading-relaxed">As the highly anticipated sequel to the popular tower defense series, Pokemon Tower Defense 2 not only inherits the classic gameplay but also brings revolutionary innovations. The game perfectly combines Pokemon's collection and training elements with tower defense strategy, while introducing brand new free exploration mode and 1vs1 battle system. Unlike traditional tower defense games and PokeRogue's randomized gameplay, Pokemon Tower Defense 2 offers players a more open and in-depth gaming experience. Through carefully designed story mode, innovative battle systems, and rich Pokemon training mechanics, players can enjoy tower defense fun while experiencing the unique charm of authentic Pokemon games!</p>
+                <p class="text-gray-100 mb-6 text-lg leading-relaxed">
+Pokemon Tower Defense 2 is a revolutionary tower defense strategy game that has undergone comprehensive upgrades and innovations based on Pokemon Tower Defense 1. As the second installment in the series, Pokemon Tower Defense 2 not only retains the beloved Pokemon catching, training, and evolution systems from the original game but also introduces many innovative gameplay mechanics.
+                    </p>
             </div>
             <div class="p-4">
                 <div class="flex justify-between gap-4">
@@ -186,8 +192,17 @@
                     
                     <!-- Game Window -->
                     <div class="flex-1">
-                        <div class="aspect-[16/9] w-full bg-black rounded-xl shadow-lg overflow-hidden">
-                            <iframe src="https://ptd.onl/play-ptd-2" class="w-full h-full border-0" allowfullscreen></iframe>
+                        <div class="aspect-[16/9] w-full bg-black rounded-xl shadow-lg overflow-hidden relative" id="gameContainer">
+                            <div class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75" id="gameOverlay">
+                                <button onclick="loadGame()" class="px-8 py-4 bg-[#34C759] hover:bg-[#2FB344] text-white font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all flex items-center space-x-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Play Now</span>
+                                </button>
+                            </div>
+                            <div id="gameFrame" class="w-full h-full"></div>
                         </div>
                     </div>
                     
@@ -207,19 +222,54 @@
                 </div>
                 <h2 class="text-2xl font-bold bg-gradient-to-r from-[#34C759] to-[#007AFF] text-transparent bg-clip-text">About Pokemon Tower Defense 2</h2>
             </div>
-            <p class="text-gray-600 text-lg leading-relaxed">Pokemon Tower Defense 2 is a revolutionary tower defense strategy game that has undergone comprehensive upgrades and innovations based on Pokemon Tower Defense 1. As the second installment in the series, Pokemon Tower Defense 2 not only retains the beloved Pokemon catching, training, and evolution systems from the original game but also introduces many innovative gameplay mechanics.
-
-Compared to Pokemon Tower Defense 1, Pokemon Tower Defense 2 represents a quantum leap in gameplay. The game has added a free exploration mode, allowing players to explore vast worlds just like traditional Pokemon games. This open-world design creates a stark contrast to PokeRogue's random dungeon exploration, providing players with a more coherent and immersive gaming experience.
-
-The battle system in Pokemon Tower Defense 2 has also received a complete upgrade. The game not only maintains the classic tower defense gameplay but also adds an innovative 1vs1 battle system. This dual battle mechanism elevates the game's strategic depth, requiring players to master both tower defense combat and traditional Pokemon battle techniques. Additionally, the game introduces second-generation Pokemon, greatly enriching the variety of Pokemon available and tactical combinations possible.
-
-In terms of story, Pokemon Tower Defense 2 offers a more complete and engaging narrative than its predecessor. Players take on the role of a Pokemon trainer, advancing the plot through various quests and challenges. This story-focused design transforms Pokemon Tower Defense 2 from a simple tower defense game into a complete Pokemon adventure.
-
-Pokemon Tower Defense 2 has also deepened its Pokemon training system. The game incorporates sophisticated elements like effort value training and nature influences, allowing each Pokemon to develop unique characteristics based on the player's training direction. This refined training system enriches Pokemon Tower Defense 2's tactical variety, enabling players to customize their Pokemon teams according to their strategic needs.
-
-Visually, Pokemon Tower Defense 2 has achieved significant improvements. The game features more polished graphics, with both Pokemon models and skill effects seeing substantial upgrades. These visual enhancements not only improve the game's aesthetics but also make battles more spectacular.
-
-As a game that combines Pokemon elements with tower defense strategy, Pokemon Tower Defense 2 successfully innovates while building upon its heritage. It not only meets the expectations of Pokemon Tower Defense 1 veterans but also attracts many new players. Compared to other Pokemon derivative games like PokeRogue, Pokemon Tower Defense 2 occupies a special position in the Pokemon gaming realm with its unique gameplay and deep content.</p>
+            <p class="text-gray-600 text-lg leading-relaxed">
+                Pokemon Tower Defense 2 is a revolutionary tower defense strategy game that has undergone comprehensive upgrades and innovations based on Pokemon Tower Defense 1. As the second installment in the series, Pokemon Tower Defense 2 not only retains the beloved Pokemon catching, training, and evolution systems from the original game but also introduces many innovative gameplay mechanics.
+                <br>**🎮 The Evolution of Pokemon Tower Defense**<br>
+                
+                Hey Pokemon fans! Remember the awesome original Pokemon Tower Defense that took the internet by storm? Well, get ready for something even more incredible - Pokemon Tower Defense 2 is here, and it's packed with so many cool new features that'll make you fall in love with the series all over again!
+                
+                <br>**🌟 A Brand New Adventure Awaits**<br>
+                
+                Pokemon Tower Defense 2 takes us on an epic journey to the Johto region, where a familiar foe has returned with a dark twist. Remember Mewthree from the first game? They're back as Shadow Mewthree, and they're causing even more trouble than before! This isn't just a simple tower defense game anymore - it's a full-blown Pokemon adventure that'll keep you hooked for hours.
+                
+                <br> **⚔️ Battle System That'll Blow Your Mind**<br>
+                
+                The battle system in Pokemon Tower Defense 2 has gotten a complete makeover! You're not just placing Pokemon on a map anymore - you're creating complex strategies, using type advantages, and mastering a whole new level of tactical gameplay. Plus, with the new buff and debuff system that actually stays when you move Pokemon around, every battle feels more strategic and rewarding than ever.
+                
+                <br> **🎯 Explore a Living, Breathing World**<br>
+                
+                Unlike the original Pokemon Tower Defense, this sequel lets you freely explore the world just like in the main Pokemon games. No more being stuck on a single screen! The game world changes with time - different Pokemon appear during day and night, weather affects battles, and you can discover hidden secrets everywhere you go.
+                
+                <br>**🌈 Catch 'Em All - Now With More Options!**<br>
+                
+                Pokemon Tower Defense 2 brings over 100 new Pokemon to catch and train! We're talking about all your Gen 2 favorites, from Chikorita to Celebi. And here's the best part - you can even bring your beloved Pokemon from the first game once you're ready. It's like a Pokemon reunion party!
+                
+                <br>**💫 Features That Make You Go "Wow!"**<br>
+                
+                - A day/night system that actually changes which Pokemon you can find
+                - Pokemon breeding (yes, you can finally make baby Pokemon!)
+                - Hold items that give your Pokemon special powers
+                - Gender mechanics that affect breeding and evolution
+                - A box system that makes managing your Pokemon super easy
+                - Buffs and debuffs that stick around when you move Pokemon
+                
+                <br>**⭐ More Ways to Play Than Ever**<br>
+                
+                Pokemon Tower Defense 2 isn't just about defending - it's about playing your way! Want to focus on breeding perfect Pokemon? Go for it! Prefer to rush through the story and take on Shadow Mewthree? That's cool too! With the new 1v1 battles, you can even test your skills against other trainers.
+                
+                <br>**🎨 A Beautiful Pokemon World**<br>
+                
+                The game looks better than ever, with improved Pokemon sprites and battle animations that'll make you feel nostalgic while enjoying modern gameplay. The interface is cleaner and more user-friendly, making it easier to manage your growing Pokemon collection.
+                
+                <br>**🤝 Join the Community**<br>
+                
+                Trading has gotten a complete overhaul in Pokemon Tower Defense 2. The new trading center makes it super easy to swap Pokemon with friends, and the improved multiplayer features mean you can show off your team building skills against other trainers from around the world!
+                
+                <br>**🌟 The Future is Bright**<br> 
+                
+                Pokemon Tower Defense 2 keeps getting better with regular updates, new features, and special events. The developers are always listening to the community and adding cool new stuff to make the game even more awesome.
+                
+                Remember, Pokemon Tower Defense 2 isn't just a sequel - it's a whole new way to experience the magic of Pokemon. Whether you're a strategic mastermind, a Pokemon collecting enthusiast, or just someone looking for a fun time, this game has something special for you. So what are you waiting for? Your Pokemon journey in Pokemon Tower Defense 2 is about to begin!</p>
         </section>
 
         <section class="mt-8 bg-white rounded-2xl shadow-md p-8">
@@ -233,90 +283,157 @@ As a game that combines Pokemon elements with tower defense strategy, Pokemon To
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Innovative Free Exploration System</h3>
-                    <p class="text-gray-600">Pokemon Tower Defense 2 introduces a groundbreaking free exploration mode, allowing players to freely adventure in a vast game world. This new game mode transforms Pokemon Tower Defense 2 from a traditional level-based tower defense game into a complete Pokemon adventure. In exploration mode, players can:
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**🎮 Core Battle System**</h3>
+                    <p class="text-gray-600">Get ready for the most exciting Pokemon battles you've ever seen in Pokemon Tower Defense 2! The battle system has been completely revamped to give you more control and strategic options than ever before:
 
-- Freely explore multiple unique map areas, each with its characteristic wild Pokemon and trainers
-- Interact with NPCs, accept various side quests, and delve deeper into the game world's story background
-- Search for hidden treasures and rare items that can help strengthen your Pokemon team
-- Discover secret areas to obtain unique Pokemon or special training resources
-- Experience a dynamic weather system where different weather conditions affect specific Pokemon types
+- Smart Pokemon Positioning: Place your Pokemon strategically to create the perfect defense
+- Dynamic Battle Mechanics: Your Pokemon's moves and abilities actually change how battles play out
+- Type Advantages Matter: Use type matchups to deal massive damage to enemies
+- Status Effects That Last: Buffs and debuffs now stick around when you move Pokemon
+- Weather System: Different weather conditions affect Pokemon performance
+- Day/Night Cycle: Some Pokemon only appear at certain times of day
 
-This open-world exploration gameplay stands in stark contrast to PokeRogue's random dungeon exploration, providing players with a more coherent and immersive gaming experience.</p>
+The best part? Pokemon Tower Defense 2's battle system feels both familiar and fresh. Whether you're a veteran trainer or new to the series, you'll love how the classic Pokemon battle mechanics blend with tower defense strategy!</p>
                 </div>
+
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Revolutionary Dual Battle System</h3>
-                    <p class="text-gray-600">One of Pokemon Tower Defense 2's biggest innovations is the introduction of a dual battle system. This system perfectly combines tower defense battles with traditional Pokemon battles, adding more strategic layers to the game:
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**🌟 Pokemon Collection & Training**</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 2 takes Pokemon collecting and training to a whole new level! Check out these awesome features:
 
-Tower Defense Battles:
-- Optimized Pokemon placement system for more flexible tactical layouts
-- New terrain effects that influence Pokemon performance
-- Dynamic enemy paths requiring more adaptable defense strategies
-- Special stage mechanics like timed defense and Boss battles
-- Synergy system where adjacent Pokemon can trigger special bonuses
+- Over 100 New Pokemon: All your Gen 2 favorites are here to catch and train
+- Breeding System: Create powerful Pokemon with perfect stats
+- Gender Mechanics: Male and female Pokemon can now breed
+- Evolution Chains: Evolve your Pokemon to unlock their true potential
+- Hold Items: Give your Pokemon special items to boost their abilities
+- Box System: Organize your Pokemon collection easily
+- Transfer System: Bring your favorites from Pokemon Tower Defense 1
+- Custom Movesets: Choose the perfect moves for each Pokemon
 
-1vs1 Battles:
-- Complete Pokemon battle system including all classic combat mechanics
-- Skill combination strategies for optimal ability configurations
-- Type advantage system requiring balanced team composition
-- Item usage strategies for various battle situations
-- Weather effects that can be utilized for tactical advantages
-
-This innovative dual battle system makes Pokemon Tower Defense 2's gameplay experience richer and more diverse, far surpassing Pokemon Tower Defense 1's single tower defense gameplay.</p>
+Want to build the ultimate Pokemon team? Now you have more ways than ever to make it happen!</p>
                 </div>
+
                 <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Deep Pokemon Training System</h3>
-                    <p class="text-gray-600">Pokemon Tower Defense 2 has completely upgraded its Pokemon training system, introducing more in-depth development elements:
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**⚔️ Game Modes & Features**</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 2 isn't just one game - it's many awesome experiences rolled into one:
 
-Level Training:
-- Optimized experience gain system with diverse training methods
-- Skill learning mechanics for freely choosing and changing abilities
-- Evolution branch selection with multiple evolution paths for certain Pokemon
-- Special evolution conditions adding training variety
-- Level cap increase items for further Pokemon enhancement
+Story Mode:
+- Epic adventure in the Johto region
+- Battle against Shadow Mewthree
+- Meet memorable characters
+- Discover hidden secrets
 
-Individual Training:
-- Effort Value system for targeted stat enhancement
-- Nature influence affecting stat growth
-- Ability selection through special items
-- Friendship cultivation improving battle performance
-- Individual Value assessment for selecting optimal Pokemon
+1v1 Battles:
+- Test your skills against other trainers
+- Strategic Pokemon battles
+- Competitive rankings
+- Special battle rules
 
-Equipment System:
-- Diverse item selection for different battle needs
-- Evolution stone collection for special Pokemon evolution
-- Technical Machines expanding Pokemon move pools
-- Stat-boosting items for temporary enhancements
-- Special effect equipment granting unique battle abilities
+Exploration:
+- Free roaming in the game world
+- Find rare Pokemon
+- Hidden items and secrets
+- Dynamic time system
 
-This comprehensive training system gives Pokemon Tower Defense 2 much greater tactical depth than its predecessor, also contrasting with PokeRogue's random training system.</p>
+Training Features:
+- Level up your Pokemon
+- Learn new moves
+- Evolve your team
+- Perfect your strategy
+
+Each mode brings something unique to the table, making Pokemon Tower Defense 2 endlessly replayable!</p>
                 </div>
-                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Innovative Multiplayer Features</h3>
-                    <p class="text-gray-600">Pokemon Tower Defense 2 introduces rich multiplayer interaction features, making the game experience more social:
 
-Battle System:
-- Real-time PVP battles to test your tactical skills
-- Ranked seasons to compete for top trainer titles
-- Friend battles for tactical sparring
-- Special rule battles for varied combat experiences
-- Battle replay system to learn from other players
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**🎯 Multiplayer & Social**</h3>
+                    <p class="text-gray-600">Connect with trainers worldwide in Pokemon Tower Defense 2:
 
 Trading System:
-- Pokemon trading with other players
-- Item trading for sharing rare resources
-- Limited-time trading events for special Pokemon
-- Breeding exchanges to share training results
-- Gift system for sending items to friends
+- Easy-to-use trading interface
+- Trade Pokemon with friends
+- Special trade events
+- Global trading community
 
-Cooperative Features:
-- Multiplayer raid challenges against powerful Bosses
-- Guild system for team building and growth
-- Cooperative missions with special team objectives
-- Resource sharing to help guild members develop
-- Guild wars for inter-guild competition
+Multiplayer Features:
+- Battle other trainers
+- Join special events
+- Compare achievements
+- Share strategies
 
-These social features create an active player community in Pokemon Tower Defense 2, greatly enhancing the game's playability and longevity.</p>
+Community Features:
+- Friend system
+- Chat with other players
+- Trading forums
+- Strategy discussions
+
+Special Events:
+- Limited time challenges
+- Rare Pokemon events
+- Community competitions
+- Seasonal content
+
+The world of Pokemon Tower Defense 2 is always active and evolving, with new things to do and people to meet!</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**💫 Technical Improvements**</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 2 brings tons of quality-of-life improvements:
+
+Performance:
+- Faster loading times
+- Smoother gameplay
+- Better animations
+- Improved graphics
+
+Interface Updates:
+- Cleaner menu design
+- Easy Pokemon management
+- Quick move selection
+- Better battle controls
+
+Game Mechanics:
+- Refined battle system
+- Improved catching mechanics
+- Better status effects
+- Enhanced AI behavior
+
+Save System:
+- Reliable auto-saving
+- Multiple save slots
+- Cloud save backup
+- Cross-device support
+
+These improvements make Pokemon Tower Defense 2 more enjoyable than ever!</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**🌈 Future Updates**</h3>
+                    <p class="text-gray-600">Pokemon Tower Defense 2 keeps getting better with regular updates:
+
+Coming Soon:
+- New Pokemon to catch
+- Extra battle features
+- More story content
+- Special events
+
+Community Requests:
+- Player-suggested features
+- Quality of life updates
+- Balance changes
+- Bug fixes
+
+Seasonal Content:
+- Holiday events
+- Special challenges
+- Limited time Pokemon
+- Unique rewards
+
+Long-term Plans:
+- Major content updates
+- New game modes
+- Extended story
+- Enhanced features
+
+Stay tuned - there's always something exciting on the horizon in Pokemon Tower Defense 2!</p>
                 </div>
             </div>
         </section>
@@ -324,44 +441,127 @@ These social features create an active player community in Pokemon Tower Defense
         <section class="mt-8 bg-white rounded-2xl shadow-md p-8">
             <div class="flex items-center mb-6">
                 <div class="feature-icon mr-4">
-                    <svg class="w-6 h-6 text-[#FF3B30]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    <svg class="w-6 h-6 text-[#007AFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                     </svg>
                 </div>
-                <h2 class="text-2xl font-bold bg-gradient-to-r from-[#FF3B30] to-[#34C759] text-transparent bg-clip-text">Tips & Strategies</h2>
+            <h2 class="text-2xl font-bold bg-gradient-to-r from-[#007AFF] to-[#34C759] text-transparent bg-clip-text">Game Tips & Strategies</h2>    
             </div>
-            <ul class="grid md:grid-cols-2 gap-4">
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#34C759] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">Early game strategy is crucial in Pokemon Tower Defense 2. Initially, focus on training versatile Pokemon like Bulbasaur, Charmander, or Squirtle. These starter Pokemon are valuable in the early game. Unlike PokeRogue, Pokemon Tower Defense 2's Pokemon training requires long-term planning. Pay attention to proper EV distribution and nature selection, as these factors will affect your Pokemon's late-game development.</span>
-                </li>
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#007AFF] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">In Pokemon Tower Defense 2's tower defense battles, positioning is key to victory. Place defensive Pokemon like Onix or Cloyster in the front line, damage dealers like Pikachu or Alakazam in the middle, and support Pokemon like Chansey or Lickitung in the back. This layered defense setup effectively counters various enemy waves.</span>
-                </li>
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#FF3B30] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">Pokemon Tower Defense 2's 1vs1 battle system requires different strategic thinking. Maintain type balance in your team to handle various opponents. Item selection is also crucial, choosing appropriate items based on your Pokemon's role. Unlike PokeRogue's randomness, battles here focus more on prediction and planning.</span>
-                </li>
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#34C759] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">In Pokemon Tower Defense 2's exploration mode, utilize map features effectively. Different areas spawn different types of wild Pokemon; understanding these distribution patterns helps collect needed Pokemon more efficiently. Also, watch for hidden areas that often contain rare Pokemon or important items.</span>
-                </li>
-                <li class="flex items-start p-4 rounded-xl bg-[#F2F2F7]">
-                    <svg class="w-5 h-5 text-[#34C759] mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <span class="text-gray-700">Resource management is vital in Pokemon Tower Defense 2. Carefully allocate rare resources like evolution stones and Technical Machines. Plan your training direction before using these valuable resources. Unlike PokeRogue's instant decision-making, this requires more long-term planning.</span>
-                </li>
-            </ul>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**🌟 Beginner's Guide**</h3>
+                    <p class="text-gray-600">New to Pokemon Tower Defense 2? These basic tips will help you get started quickly:
+
+- Starting Pokemon: Choose Charmander or Bulbasaur, they're both powerful in the early game
+- Type Matchups: Master Pokemon type advantages and weaknesses - it's key to victory
+- Strategic Placement: Position ranged Pokemon in the back and melee Pokemon in the front
+- Upgrade Priority: Focus on leveling up your most frequently used core Pokemon first
+- Resource Management: Use coins and Pokeballs wisely, don't waste them unnecessarily
+- Side Quests: Complete side missions for extra rewards and rare Pokemon
+- Item Usage: Use potions and other items strategically to maintain Pokemon status
+- Save Progress: Save your game frequently to avoid losing progress</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**⚔️ Battle Strategies**</h3>
+                    <p class="text-gray-600">Master these battle techniques to become invincible in Pokemon Tower Defense 2:
+
+- Type Composition: Build a team with diverse Pokemon types to counter different enemies
+- Skill Selection: Equip appropriate move combinations for each Pokemon's position
+- Status Control: Utilize paralysis, sleep, and other status moves to control enemies
+- Weather Tactics: Adjust your strategy and Pokemon selection based on weather conditions
+- Chain Effects: Use move combinations to create powerful chain reactions
+- Position Adjustment: Adapt Pokemon positions to handle different enemy waves
+- Item Synergy: Choose the right items to enhance your Pokemon's abilities
+- Special Techniques: Take advantage of terrain and special mechanics for battle advantages</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**🎯 Team Building**</h3>
+                    <p class="text-gray-600">Creating the ultimate team is core to Pokemon Tower Defense 2:
+
+Recommended Setup:
+- Front Line: Machamp, Dragonite, Tyranitar and other tank-type Pokemon
+- Middle Row: Blaziken, Blastoise, Venusaur and other all-rounder Pokemon
+- Back Row: Zapdos, Articuno and other ranged damage dealers
+
+Training Tips:
+- Focus Training: Concentrate on 2-3 main Pokemon for your core team
+- Balanced Development: Maintain overall team power balance
+- Type Coverage: Ensure your team can handle Pokemon of all types
+- Move Synergy: Choose moves that complement each other
+- Item Distribution: Allocate items effectively to maximize team strength</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**💪 Pokemon Training**</h3>
+                    <p class="text-gray-600">Make your Pokemon stronger in Pokemon Tower Defense 2 with proper training:
+
+Leveling Tips:
+- Choose appropriate training locations
+- Use experience-boosting items
+- Participate in special training events
+- Complete daily tasks for experience
+
+Training Essentials:
+- Monitor IVs and EVs
+- Choose suitable natures
+- Allocate skill points wisely
+- Engage in Pokemon breeding
+
+Evolution Guide:
+- Time evolutions perfectly
+- Prepare necessary evolution items
+- Learn key moves before evolving
+- Consider delayed evolution strategies</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#34C75910] to-[#007AFF10]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**🌟 Advanced Techniques**</h3>
+                    <p class="text-gray-600">Master these advanced techniques to dominate in Pokemon Tower Defense 2:
+
+Combat Techniques:
+- Chain skill combinations
+- Weather system utilization
+- Status effect stacking
+- Special terrain exploitation
+
+Resource Management:
+- Coin farming methods
+- Optimal item timing
+- Pokeball conservation
+- Resource prioritization
+
+Special Mechanics:
+- Hidden ability activation
+- Rare Pokemon capture
+- Secret area exploration
+- Special event triggers</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-gradient-to-br from-[#007AFF10] to-[#34C75910]">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">**🏆 Challenge Mode Guide**</h3>
+                    <p class="text-gray-600">Ready to tackle Pokemon Tower Defense 2's toughest challenges?
+
+Challenge Preparation:
+- Team composition tips
+- Item checklist
+- Recommended move sets
+- Tactical planning
+
+Boss Battle Tips:
+- Boss characteristic analysis
+- Counter team building
+- Critical moment handling
+- Failure analysis
+
+Special Challenges:
+- Time trial strategies
+- Special rule adaptation
+- Achievement completion
+- Ranking match tactics</p>
+                </div>
+            </div>
         </section>
 
         <section class="mt-8 bg-white rounded-2xl shadow-md p-8 mb-12">
@@ -395,5 +595,23 @@ These social features create an active player community in Pokemon Tower Defense
             <p class="text-center text-gray-500">&copy; 2024 TowerDefense.online - All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        function loadGame() {
+            const gameFrame = document.getElementById('gameFrame');
+            const gameOverlay = document.getElementById('gameOverlay');
+            
+            const iframe = document.createElement('iframe');
+            iframe.src = "https://www.miniplay.com/embed/pokemon-tower-defense-2";
+            iframe.className = "w-full h-full border-0";
+            iframe.frameBorder = "0";
+            iframe.allowFullscreen = true;
+            iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms');
+            iframe.loading = "lazy";
+            
+            gameFrame.appendChild(iframe);
+            gameOverlay.style.display = 'none';
+        }
+    </script>
 </body>
 </html> 

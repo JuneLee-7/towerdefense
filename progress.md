@@ -1,7 +1,7 @@
 # Pokemon Tower Defense 网站开发进展
 
 ## 项目概述
-开发一个包含多个Pokemon Tower Defense游戏的在线游戏网站，包括PTD1、PTD2、PTD3和PokeRogue四个游戏版本。
+开发一个包含多个Pokemon Tower Defense游戏的在线游戏网站，包括PTD1、PTD2、PTD3和PokeRogue四个游戏版本。这是一个英文网站，所有语言使用英文。
 
 ## 已完成工作
 
